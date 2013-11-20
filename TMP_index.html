@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+/*Simple reset*/
+* {margin: 0; padding: 0;}
+
+body {
+  /*You can use any kind of background here.*/
+  background-image:url('indexbg.jpg'); 
+   background-size: 100%; 
+   background-repeat: no-repeat;
+   font-family: "Blackadder ITC";
+   font-size: 18px;
+}
+canvas {
+  display: block;
+}
+.nav{
+  list-style: none;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+
+}
+.nav li{
+  display: inline;
+}
+.nav img{
+  display: inline-block;
+}
+
+ul{
+  list-style:none;
+
+}
+li{
+  list-style:none;
+}
+ul li{
+  display: inline;
+}
+nav li img {
+  list-style: none;
+    position: absolute;
+    padding-left: 50px;
+    transition-duration: .5s;
+    opacity: 1;
+}
+nav li img:first-child {
+  list-style: none;
+    opacity: 0;
+}
+
+nav li:hover img {
+  list-style: none;
+    opacity: 0;
+}
+nav li:hover img:first-child {
+  list-style: none;
+    opacity: 1;
+}
+</style>
+<script type="text/javascript">
+var imgx = 0, imgy=0;
+window.onload = function(){
+  //canvas init
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+  var canvas1 = document.getElementById("canvasc");
+  var ctx1 = canvas1.getContext("2d");
+  var vimg1 = document.getElementById("cover1");
+  ctx1.drawImage(vimg1,imgx,imgy,640,480,0,0,640,480); 
+    
+  //canvas dimensions
+  var W = window.innerWidth;
+  var H = window.innerHeight;
+  canvas.width = W;
+  canvas.height = H;
+  
+  //snowflake particles
+  var mp = 25; //max particles
+  var particles = [];
+  for(var i = 0; i < mp; i++)
+  {
+    particles.push({
+      x: Math.random()*W, //x-coordinate
+      y: Math.random()*H, //y-coordinate
+      r: Math.random()*4+1, //radius
+      d: Math.random()*mp //density
+    })
+  }
+  
+  //Lets draw the flakes
+  function draw()
+  {
+    ctx.clearRect(0, 0, W, H);
+    
+    ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+    ctx.beginPath();
+    for(var i = 0; i < mp; i++)
+    {
+      var p = particles[i];
+      ctx.moveTo(p.x, p.y);
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2, true);
+    }
+    ctx.fill();
+    update();
+  }
+  
+  var angle = 0;
+  function update()
+  {
+    angle += 0.01;
+    for(var i = 0; i < mp; i++)
+    {
+      var p = particles[i];
+      p.y += Math.cos(angle+p.d) + 1 + p.r/2;
+      p.x += Math.sin(angle) * 2;
+      
+      if(p.x > W+5 || p.x < -5 || p.y > H)
+      {
+        if(i%3 > 0) //66.67% of the flakes
+        {
+          particles[i] = {x: Math.random()*W, y: -10, r: p.r, d: p.d};
+        }
+        else
+        {
+          //If the flake is exitting from the right
+          if(Math.sin(angle) > 0)
+          {
+            //Enter from the left
+            particles[i] = {x: -5, y: Math.random()*H, r: p.r, d: p.d};
+          }
+          else
+          {
+            //Enter from the right
+            particles[i] = {x: W+5, y: Math.random()*H, r: p.r, d: p.d};
+          }
+        }
+      }
+    }
+  }
+  
+  //animation loop
+  setInterval(draw, 33);
+}
+
+</script>
+<img style="display:none" id="cover1" src="cover.jpg">
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+<canvas width="570" height="480" id="canvasc" style = "border-width: 10px; border-style:double; position: absolute; left: 390px; top: 80px;"></canvas>
+<nav>
+  <ul class="nav">
+    <li>
+      <img src="coverbt2.png" onClick="parent.location='TMP_toc.html'">
+      <img src="coverbt1.png" onClick="parent.location='TMP_toc.html'">
+    </li>
+  </ul>
+</nav>
+</body>
+<audio controls autoplay style="display: none">
+<audio style="display: none" autoplay loop><source src="sounds/fantasy.mp3" type="audio/mpeg">Your browser does not support the audio element.
+</audio>
+</center>
+</html>

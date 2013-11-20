@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body{
+   background-image:url('mainBG.jpg'); 
+   background-size: 100%; 
+   background-repeat: no-repeat;
+   font-family: "Blackadder ITC";
+}
+h1{
+  font-family: "Blackadder ITC";
+  font-size: 36px;
+}
+h2{
+  font-family: "Blackadder ITC";
+  font-size: 26px;
+}
+h3{
+  font-family: "Blackadder ITC";
+  font-size: 24px;
+}
+p{
+  font-family: "Blackadder ITC";
+  font-size: 26px;
+}
+.nav{
+  list-style: none;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+
+}
+.nav li{
+  display: inline;
+}
+.nav img{
+  display: inline-block;
+  padding: 10px;
+}
+
+ul{
+  list-style:none;
+
+}
+li{
+  list-style:none;
+}
+ul li{
+  display: inline;
+}
+nav li img {
+  list-style: none;
+    position: absolute;
+    transition-duration: .5s;
+    opacity: 1;
+}
+nav li img:first-child {
+  list-style: none;
+    opacity: 0;
+}
+
+nav li:hover img {
+  list-style: none;
+    opacity: 0;
+}
+nav li:hover img:first-child {
+  list-style: none;
+    opacity: 1;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>The Meeting Place - Chapter 4</title>
+<script type = "text/javascript">
+var vcanvas, vcon, vimg1, vimg2, vimg3, vimgbgd;
+var imgx = 0, imgy=0, img;
+
+function loadImage(){
+        vcanvas = document.getElementById("canvasc");
+        vcon = vcanvas.getContext("2d");
+        vimgbgd = document.getElementById("scene4");
+        
+        vcon.drawImage(vimgbgd,imgx,0,640,480,0,0,640,480); 
+        setInterval("animate()",800);
+ }
+
+var counter = 0;
+function animate(){
+        counter ++;
+        if(counter > 50) counter = 0;
+        imgx = counter*640;
+        vcon.drawImage(vimgbgd,imgx,0,640,480,0,0,640,480); 
+}
+
+</script>
+<center>
+<h1>The Meeting Place <br> </h1>
+</head>
+<body onload="loadImage()">
+<canvas width = "640" height = "480" style = "border-width: 10px; border-style:double; "id = "canvasc"> This browser does not support HTML 5
+</canvas>
+<img style="display: none" id="scene4" alt="Scene 1" src="chap4Images/scene4.jpg">
+<h2><i> Chapter 4: Wasted Chance</i></h2>
+<h3>Scene 4: The Greatest Revelation</h3>
+<p>Tears from his eyes fell. "Can you do me a favor? Can you call your text mate now? As in now, <br> 
+  right here in front of me?" Martha called her text mate then suddenly she heard a phone ringing. <br>
+   Martha looked around trying to trace who's the owner of the phone ringing. <br> 
+   Craig shows his phone to Martha and cried. <br>
+<br>
+*Martha Folin calling.....
+</p>
+<br><br>
+</body>
+<nav>
+  <ul class="nav">
+    <li>
+      <img src="backbutton1.png" onClick="parent.location='TMP_Chapter4b.html'">
+      <img src="backbutton.png" onClick="parent.location='TMP_Chapter4b.html'">
+    </li>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <li>
+      <img src="nextbutton1.png" onClick="parent.location='TMP_Chapter5.html'">
+      <img src="nextbutton.png" onClick="parent.location='TMP_Chapter5.html'">
+    </li>
+  </ul>
+</nav>
+</center>
+<audio controls autoplay style="display: none">
+<audio style="display: none" autoplay loop><source src="sounds/paranoid.mp3" type="audio/mpeg">Your browser does not support the audio element.
+</audio>
+</html>

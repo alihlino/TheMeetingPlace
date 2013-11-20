@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body{
+   background-image:url('mainBG.jpg'); 
+   background-size: 100%; 
+   background-repeat: no-repeat;
+   font-family: "Blackadder ITC";
+}
+h1{
+  font-family: "Blackadder ITC";
+  font-size: 36px;
+}
+h2{
+  font-family: "Blackadder ITC";
+  font-size: 26px;
+}
+h3{
+  font-family: "Blackadder ITC";
+  font-size: 24px;
+}
+p{
+  font-family: "Blackadder ITC";
+  font-size: 26px;
+}
+.nav{
+  list-style: none;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+
+}
+.nav li{
+  display: inline;
+}
+.nav img{
+  display: inline-block;
+  padding: 10px;
+}
+
+ul{
+  list-style:none;
+
+}
+li{
+  list-style:none;
+}
+ul li{
+  display: inline;
+}
+nav li img {
+  list-style: none;
+    position: absolute;
+    transition-duration: .5s;
+    opacity: 1;
+}
+nav li img:first-child {
+  list-style: none;
+    opacity: 0;
+}
+
+nav li:hover img {
+  list-style: none;
+    opacity: 0;
+}
+nav li:hover img:first-child {
+  list-style: none;
+    opacity: 1;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>The Meeting Place - Chapter 2</title>
+<script type = "text/javascript">
+var vcanvas, vcon, vimg1, vimg2, vimg3, vimgbgd;
+var imgx = 0, imgy=0, img;
+
+function loadImage(){
+        vcanvas = document.getElementById("canvas");
+        vcon = vcanvas.getContext("2d");
+        vimgbgd = document.getElementById("office");
+        vimg1 = document.getElementById("Craig");
+        
+        vcon.drawImage(vimgbgd,0,0,640,480);
+        vcon.drawImage(vimg1,imgx,imgy,250,320,150,20,250,320); 
+        setInterval("animate()",500);
+ }
+
+var counter = 0;
+function animate(){
+        counter ++;
+        if(counter > 3) counter = 0;
+        imgx = counter*250;
+        vcon.drawImage(vimgbgd,0,0,640,480);
+        vcon.drawImage(vimg1,imgx,imgy,250,320,150,20,250,320);
+}
+
+</script>
+<center>
+<h1>The Meeting Place <br> </h1>
+</head>
+<body onload="loadImage()">
+<canvas width = "640" height = "480" style = "border-width: 10px; border-style:double; "id = "canvas"> This browser does not support HTML 5
+</canvas>
+<h2><i> Chapter 2: The day he lied </i></h2>
+<h3>Scene 1: The Decision</h3>
+<p> Craig was one of the handsome guys in the university. He was so depressed because of what happened between him and his girlfriend. <br>For him to totally move on and forget his past, he decided to go to Manila and stay there for good to study in a University wherein <br>he met this beautiful girl named Martha. Love at first sight? People say that is not true. <br>Though Craig doesn't believe in those sayings, since he met this girl, he thinks that love at first sight was true.<br><br>
+
+Without further thinking, with his heart still broken, full of fear about rejection, Craig find ways to get the cell phone number of Martha. <br>"Hi, I wonder if you have the cell phone number of Martha? <br>I'm one of her friends and I really need to talk to her since she wasn't in the university on Tuesdays." <br>He said to one of her classmate. Hours passed by and he still not got what he wants. Since Martha is one of the heartthrobs in the university, <br>her personal life and social life was so confidential. She doesn't let anyone know of her number unless they were really close.<br><br>
+
+"I gave-up easily last time, so I lost her." He said to himself. Determination of him comes out just not to lose a special girl again. 
+</p>
+<br><br>
+
+</body>
+<nav>
+  <ul class="nav">
+    <li>
+      <img src="backbutton1.png" onClick="parent.location='TMP_Chapter1c.html'">
+      <img src="backbutton.png" onClick="parent.location='TMP_Chapter1c.html'">
+    </li>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <li>
+      <img src="nextbutton1.png" onClick="parent.location='TMP_Chapter2a.html'">
+      <img src="nextbutton.png" onClick="parent.location='TMP_Chapter2a.html'">
+    </li>
+  </ul>
+</nav>
+
+<img style="display: none" id="office" alt="Scene 1" src="chap2Images/office.png" width="640" height = "480">
+<img style="display: none" id="Craig" alt="" src="chap2Images/c2s1.png">
+</center>
+<audio controls autoplay style="display: none">
+<audio style="display: none" autoplay loop><source src="sounds/mi.mp3" type="audio/mpeg">Your browser does not support the audio element.
+</audio>
+</html>

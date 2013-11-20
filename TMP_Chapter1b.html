@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body{
+   background-image:url('mainBG.jpg'); 
+   background-size: 100%; 
+   background-repeat: no-repeat;
+   font-family: "Blackadder ITC";
+}
+h1{
+  font-family: "Blackadder ITC";
+  font-size: 36px;
+}
+h2{
+  font-family: "Blackadder ITC";
+  font-size: 26px;
+}
+h3{
+  font-family: "Blackadder ITC";
+  font-size: 24px;
+}
+p{
+  font-family: "Blackadder ITC";
+  font-size: 26px;
+}
+.nav{
+  list-style: none;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+
+}
+.nav li{
+  display: inline;
+}
+.nav img{
+  display: inline-block;
+  padding: 10px;
+}
+
+ul{
+  list-style:none;
+
+}
+li{
+  list-style:none;
+}
+ul li{
+  display: inline;
+}
+nav li img {
+  list-style: none;
+    position: absolute;
+    transition-duration: .5s;
+    opacity: 1;
+}
+nav li img:first-child {
+  list-style: none;
+    opacity: 0;
+}
+
+nav li:hover img {
+  list-style: none;
+    opacity: 0;
+}
+nav li:hover img:first-child {
+  list-style: none;
+    opacity: 1;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>The Meeting Place - Chapter 1</title>
+<script type = "text/javascript">
+var vcanvas, vcon, vimg1, vimg2;
+var imgx = 0, imgy=0, imgz=0;
+
+function loadImage(){
+         //alert('test loadImage...')
+        vcanvas = document.getElementById("canvas");
+        vcon = vcanvas.getContext("2d");
+        vimg1 = document.getElementById("scene3");
+        
+        vcon.drawImage(vimg1,imgx,imgy,640,480,0,0,640,480);
+        setInterval("animate()",400);
+ }
+ 
+var counter = 0; 
+function animate(){
+        counter++;
+        if(counter > 17) counter = 0;
+        imgx = counter*640;
+        vcon.drawImage(vimg1,imgx,imgy,640,480,0,0,640,480);
+
+        
+}
+</script>
+<center>
+<h1>The Meeting Place <br> </h1>
+</head>
+<body onload="loadImage()">
+<canvas width = "640" height = "480" style = "border-width: 10px; border-style:inset; "id = "canvas"> This browser does not support HTML 5
+</canvas>
+<img style="display: none" id="scene3" alt="Scene 1" src="chap1Images/scene3img.jpg" width="640" height = "480">
+<h2><i> Chapter 1: Before it all went wrong (continuation...) </i></h2>
+<h3>Scene 3: Who's that girl?</h3>
+<p> After our 4 classes the girl went directly to restroom. <br>"Why she was not looked around to find me when our professor called my last name? Is she already moved-on?" <br>I followed her and waited outside of the girl's restroom. 1...2...3...4...5...6, 7, 8... <br>"This girl already pisses me off! But wait, you stupid Craig! What if she was not in there? Stupid!" <br>Looking for that girl in a big campus like this is not a joke. So what? I really missed her. I want to hug her tight and say sorry and goodbye for the last time.<br><br>
+
+A long search for my Ex was done. I found her on the hall of Engineering building talking and laughing with one of our classmates. <br>I ran towards them and hug Trish from her back. *SLLLAAAPPPPP!!* "Ouch! That was hurt, Trish!" <br>I was surprised when she looked at me. "Oh! I'm so sorry. I thought you were someone else" <br>The girl accepted my apology and she recognized my voice. Since we were attending the same class, I think of introducing myself to them to make friends. 
+</p>
+<br><br>
+
+</body>
+<nav>
+  <ul class="nav">
+    <li>
+      <img src="backbutton1.png" onClick="parent.location='TMP_Chapter1a.html'">
+      <img src="backbutton.png" onClick="parent.location='TMP_Chapter1a.html'">
+    </li>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <li>
+      <img src="nextButton1.png" onClick="parent.location='TMP_Chapter1c.html'">
+      <img src="nextButton.png" onClick="parent.location='TMP_Chapter1c.html'">
+    </li>
+  </ul>
+</nav>
+</center>
+<audio controls autoplay style="display: none">
+<audio style="display: none" autoplay loop><source src="sounds/happy.mp3" type="audio/mpeg">Your browser does not support the audio element.
+</audio>
+</html>
